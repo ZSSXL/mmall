@@ -1,0 +1,36 @@
+package com.mmall.test;
+
+import com.google.common.eventbus.DeadEvent;
+import com.mmall.util.MD5Util;
+import org.mybatis.generator.api.MyBatisGenerator;
+import org.mybatis.generator.config.Configuration;
+import org.mybatis.generator.config.xml.ConfigurationParser;
+import org.mybatis.generator.exception.XMLParserException;
+import org.mybatis.generator.internal.DefaultShellCallback;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class GeneratorTest {
+
+    //@Test
+    public void generatorTest() throws Exception {
+        List<String> warnings = new ArrayList<>();
+        boolean overwrite = true;
+        File configFile = new File("E:\\My files\\IdeaProjects\\mmall\\src\\main\\resources\\generatorConfig.xml");
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(configFile);
+        DefaultShellCallback callBack = new DefaultShellCallback(overwrite);
+        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,callBack,warnings);
+        myBatisGenerator.generate(null);
+    }
+
+    public static void main(String[] args) {
+        String str = "123456zss";
+        String strMD5 = MD5Util.MD5EncodeUtf8(str);
+        System.out.println(strMD5);
+    }
+}
