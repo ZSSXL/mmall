@@ -23,7 +23,7 @@
     <aspectjweaver-version>1.9.2</aspectjweaver-version>
     <jackson-version>2.9.8</jackson-version>
     <commons-fileupload-version>1.3.3</commons-fileupload-version>
-    <guava-verson>27.0.1-jre</guava-verson>
+    <guava-verson>29.0-jre</guava-verson>
     <junit-version>4.12</junit-version>
     <hashids-version>1.0.3</hashids-version>
     <commons-lang-version>2.6</commons-lang-version>
